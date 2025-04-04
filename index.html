@@ -1,0 +1,462 @@
+<!-- Informs the browser of the document type -->
+<!doctype html>
+<!-- Specifies the language of the website as English to help search engine optimisation and screen readers -->
+<html lang="en">
+<!-- Head contains information about the webpage not visible to the user on the page -->
+
+<head>
+    <!-- Allows set of characters addtional to standard ASCII characters to be used on website -->
+    <meta charset="utf-8">
+    <!-- Viewport meta tag allows controlling size of the viewport for responsive design  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of webpage to be display on browser bar -->
+    <title>Madilu Farmstay</title>
+
+    <!-- Metadata for search engine optimisation -->
+    <meta name="author" content="Marius Gontran">
+    <meta name="description" content="Discover Madilu FarmStay, luxury rustic accomodation in the Blue Mountains.">
+    <meta name="keywords" content=" Madilu , Farm Stay, Luxury, Rustic Escape, Accomodation, Blue Mountains, Sydney, Vacation Rental, AirBNB,
+        Family friendly getaway, Tranquil retreat, Plunge pool, farm animals, modern amenities, nature retreat, romantic escape,
+        scenic view, interior design, relaxation destination">
+
+    <!-- Linking external stylesheet using relative path to it  -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+
+
+    <!-- Using a customer favicon to show on the browser title bar  -->
+    <link rel="icon" href="images/logo/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<!-- Body contains all the visible content of the webpage, subdivided in different sections -->
+
+<body>
+    <main>
+        <!-- Hero section covering whole screen -->
+        <!-- Hero section uses div instead section as doesnt contain a heading -->
+        <div class="hero">
+            <!-- Overlay to apply filter to background and contain hero sections elements -->
+            <div class="overlay">
+                <img class="hero-logo" src="images/logo/Madilu-logo-square.png" alt="Madilu Farm Stay logo">
+                <!-- Button linking to About section -->
+                <a href="#about" class="explore-button">
+                    Explore
+                    <!-- Arrow pointing down to indicate further content -->
+                    <!-- SVGRepo. "Chevron Compact Down SVG" Accessed November 11, 2024.
+                    https://www.svgrepo.com/svg/344635/chevron-compact-down  -->
+                    <img class="explore-icon" src="images/icons/chevron-down.svg" alt="Chevron pointing down">
+                </a>
+            </div>
+        </div>
+
+        <!-- About section -->
+        <section class="about" id="about">
+            <!-- Full width separator line above and below section content to create visual grouping -->
+            <hr class="separator">
+            <h2>About</h2>
+
+            <!-- About section content using 3 column grid, switches to 1 column on mobile-->
+            <div class="about-grid">
+                <!-- Column 1: Text introducing the property -->
+                <div class="tile"> Discover Madilu Farmstay — a serene escape nestled amidst the stunning, rolling
+                    hills of the
+                    Blue Mountains.
+                    This luxurious open-plan barn house sits on 4 acres of tranquil land, offering the perfect blend of
+                    comfort,
+                    modern amenities, and unforgettable family-friendly entertainment.
+                </div>
+
+                <!-- Column 2: Tagline and Learn More button -->
+                <div class="middle-tile">
+                    <div class="tagline">Your Luxury Rustic Escape </div>
+                    <a href="#amenities" class="booking-btn">Learn More</a>
+                </div>
+
+                <!-- Column 3: Text giving background infomation on property -->
+                <div class="tile"> Meticulously transformed by renowned interior designer Marina Ye over three dedicated
+                    years,
+                    Madilu Farmstay invites you to unwind and recharge in unparalleled style.
+                    Highly sought after and featured in several online travel and lifestyle articles, this dream retreat
+                    is waiting for you!
+                </div>
+            </div>
+            <hr class="separator">
+        </section>
+
+        <!-- Gallery section -->
+
+        <!-- REPLACED GALLERY SECTION -->
+        <section class="gallery light-section" id="gallery">
+            <div class="content-wrapper">
+                <h2>Gallery</h2>
+                <div class="container">
+                    <div class="slide">
+                        <!-- Replace the background-image paths with your actual paths -->
+                        <div class="item" style="background-image: url('images/property/GateEntry.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">The Ultimate Destination</div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url('images/property/home-8.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url('images/property/home-1.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url('images/property/home-2.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url('images/property/home-3.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url('images/property/home-5.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url('images/property/home-7.jpg');">
+                            <div class="content">
+                                <div class="name">Madilu</div>
+                                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Amenities section -->
+        <section class="amenities" id="amenities">
+            <!-- Content divided into 2 sections: image and info -->
+            <div class="amenities-grid">
+                <!-- Left section: image-->
+                <div class="image-container">
+                    <!-- Houzz. "Old Barns Become an Airy Modern Rustic Home." Accessed October 19, 2024.
+                    https://www.houzz.com/magazine/houzz-tour-old-barns-become-an-airy-modern-rustic-homestsetivw-
+                    vs~172078646. -->
+                    <img class="amenities-image" src="images/property/home-5.jpg"
+                        alt="Picture of masterbedroom ensuite">
+                </div>
+
+                <!-- Right section: info-->
+                <div class="amenities-info">
+                    <h2>Amenities</h2>
+                    <p class="description">Fully equipped to cater your needs in absolute comfort and luxury.</p>
+
+                    <!-- Icons section -->
+                    <hr class="separator">
+
+                    <div class="info-tiles">
+                        <div class="info-tile">
+                            <!-- SVGRepo. "Users SVG Vector" Accessed November 14, 2024.
+                            https://www.svgrepo.com/svg/473461/users -->
+                            <img src="images/icons/guests.svg" class="amenities-icons" alt="Icon for number of guests">
+                            <p>Up to 15 guests</p>
+                        </div>
+                        <div class="info-tile">
+                            <!-- SVGRepo. "Bed Double SVG Vector" Accessed November 14, 2024.
+                            https://www.svgrepo.com/svg/490555/bed-double  -->
+                            <img src="images/icons/bed.svg" class="amenities-icons" alt="Icon for number of bedrooms">
+                            <p>4 bedrooms</p>
+                        </div>
+                        <div class="info-tile">
+                            <!-- SVGRepo. "Bathtub Mirror SVG Vector" Accessed November 14, 2024.
+                            https://www.svgrepo.com/svg/490549/bathtub-mirror  -->
+                            <img src="images/icons/bath.svg" class="amenities-icons" alt="Icon for number of bathrooms">
+                            <p>4 bathrooms</p>
+                        </div>
+                    </div>
+
+                    <hr class="separator">
+
+                    <!-- List of property amenities/features -->
+                    <!-- Amenities-->
+                    <ul class="amenities-list">
+                        <li>King size master bedroom with ensuite</li>
+                        <li>Four charming bedrooms with king-sized beds</li>
+                        <li>Modern kitchen with appliances</li>
+                    </ul>
+
+                    <!-- Features -->
+                    <ul class="amenities-list">
+                        <li>Four acres of peaceful private land</li>
+                        <li>Hand feed friendly farm animals</li>
+                        <li>Private swimming pool</li>
+                        <li>Beautiful avocado plantations</li>
+                        <li>Cozy fireplace for chilly nights</li>
+                    </ul>
+
+                    <!-- Link to booking section -->
+                    <a href="#booking" class="right-align booking-btn">Book Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things To Do section -->
+        <section class="things-to-do dark-section">
+            <div class="content-wrapper">
+                <div class="things-title-wrapper">
+                    <h2>Things to do</h2>
+                </div>
+
+                <!-- Things to do Slider -->
+                <div class="things-slider snaps-inline">
+                    <!-- Slide 1 -->
+                    <div class="slide" id="slide-1">
+                        <!-- Adobe Stock. "Portrait of Anglo-Nubian Goat with Herbs in the Mouth." Accessed October 20, 2024.
+                        https://stock.adobe.com/au/images/portrait-of-anglo-nubian-goat-with-herbs-in-themouth/
+                        199776985?prev_url=detail. -->
+                        <img src="images/things-to-do/goat.jpeg" alt="Picture of Rosie The Goat">
+
+                        <div class="slide-text text-1">
+                            <h3>Meet Rosie The Goat</h3>
+                            <p>During your visit, don’t miss the chance to meet Rosie, our lovable and playful goat!
+                                She adores being fed and pampered with gentle pats, especially behind her ears.
+                                Rosie’s sweet personality and playful head nudges are sure to make your day
+                                unforgettable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide" id="slide-2">
+                        <!-- Adobe Stock. "Female watching the sunset after a long day hiking in Blue Mountains" Accessed November 17, 2024.
+                        https://stock.adobe.com/au/images/female-watching-the-sunset-after-a-long-day-hiking-in-blue-mountains/265105167 -->
+                        <img src="images/things-to-do/hiking.jpg" alt="Picture of a woman hiking in the Blue Mountains">
+                        <div class="slide-text text-2">
+                            <h3>Visit the Blue Mountains</h3>
+                            <p>Step into the heart of Australia’s natural beauty with the majestic Blue Mountains right
+                                at our doorstep.
+                                Whether you’re planning a day hike, exploring the vibrant visitor centers,
+                                this remarkable landscape offers unforgettable experiences for every adventurer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide" id="slide-3">
+                        <!-- Pools and Spa Life. "Types of Plunge Pools." Accessed October 18, 2024.
+                        https://www.poolspalife.com.au/buying/types-of-pools/plunge-pools. -->
+                        <img src="images/things-to-do/pool.webp" alt="Picture of the plunge pool">
+                        <div class="slide-text text-3">
+                            <h3>Take a Dip in the Plunge Pool</h3>
+                            <p>After a long day of exploring, hiking, or traveling, unwind in our beatiful heater plunge
+                                pool. Allow
+                                the soothing warmth melt away your fatigue as you sink into this peaceful oasis. A
+                                complimentary bottle
+                                of wine is offered to help you enjoy the tranquil evening sky in the perfect spot to
+                                relax and recharge.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider navigation (3 dots) -->
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Booking section -->
+        <section class="booking light-section" id="booking">
+            <div class="content-wrapper">
+                <div class="booking-grid">
+                    <form action="https://formspree.io/f/movedkrb" method="POST" class="form-container"
+                        id="bookingForm">
+                        <h2>Book Now</h2>
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" name="Name" placeholder="Enter Your Full Name" id="name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="Enter your Email" id="email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="Enter your Mobile Number" name="Phone" id="phone" required
+                                onfocus="this.placeholder=''" onblur="this.placeholder='Type your Number Here.'">
+                        </div>
+                        <div class="input-group">
+                            <label>Message</label>
+                            <input type="text" placeholder="Got something to say?" name="Message" id="textplace"
+                                required onfocus="this.placeholder=''"
+                                onblur="this.placeholder='Type your message here.'">
+                        </div>
+
+                        <div class="date-row">
+                            <div>
+                                <label>From Date</label>
+                                <input type="date" name="From Date" id="fromDate" required>
+                            </div>
+                            <div>
+                                <label>To Date</label>
+                                <input type="date" name="To Date" id="toDate" required>
+                            </div>
+                        </div>
+
+                        <button class="booking-btn" type="submit">Submit</button>
+                    </form>
+
+                    <!-- Notification -->
+                    <div id="notification" class="hidden">
+                        Thank you for submitting! A confirmation email has been sent.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            #notification {
+                display: none;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                text-align: center;
+                border-radius: 5px;
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+
+        
+        
+
+        <div class="image-container">
+            <!-- Houzz. "Old Barns Become an Airy Modern Rustic Home." Accessed October 19, 2024.
+                        https://www.houzz.com/magazine/houzz-tour-old-barns-become-an-airy-modern-rustic-homestsetivw-
+                        vs~172078646. -->
+            <img class="amenities-image" src="images/property/home-9.jpg"
+                alt="Picture of house interior, living room with fireplace">
+        </div>
+        </div>
+        </div>
+        </section>
+
+        <!-- Contact section -->
+        <section class="contact dark-section">
+            <div class="content-wrapper">
+                <h2>Contact Us</h2>
+                <div class="contact-flex">
+                    <!-- Left section: Logo and Contact details -->
+                    <div class="contact-left">
+                        <!-- Logo links back to top of the page -->
+                        <a href="#">
+                            <img class="contact-logo" src="images/logo/Madilu-logo-square.png"
+                                alt="Lilac Valley Farm Stay logo">
+                        </a>
+                        <p>Madilu Farmstay
+                            <br>Kolar - Chintamani Rd, Kithandur, Karnataka 563126
+                        </p>
+                        <p>+91 9591846471</p>
+                        <p>madilufarmstay@gmail.com</p>
+
+                        <!-- Social Media links-->
+                        <div>
+                            <!-- Facebook -->
+                            <!-- SVGRepo. "Facebook SVG Vector" Accessed November 18, 2024.
+                            https://www.svgrepo.com/svg/521654/facebook  -->
+                            <a class="contact-link" href="https://www.facebook.com/"><img class="contact-icon"
+                                    src="images/icons/facebook.svg" alt="DESCRIPTION"></a>
+                            <!-- Instagram -->
+                            <!-- SVGRepo. "Instagram SVG Vector " Accessed November 18, 2024.
+                            https://www.svgrepo.com/svg/521711/instagram  -->
+                            <a class="contact-link" href="https://www.instagram.com/"><img class="contact-icon"
+                                    src="images/icons/insta.svg" alt="DESCRIPTION"></a>
+                        </div>
+                    </div>
+                    <!-- Right section: Map -->
+                    <div class="contact-right">
+                        <!-- Embedded Google Map -->
+                        <iframe class="map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31562.79601675284!2d78.1154!3d13.2498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDE0JzU5LjMiTiA3OMKwMDYnNTUuNCJF!5e0!3m2!1sen!2sau!4v1731891935851!5m2!1sen!2sau"
+                            style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button id="scrollTopBtn" class="scroll-top" onclick="scrollToTop()">↑</button>
+
+        <script>
+          const scrollTopBtn = document.getElementById("scrollTopBtn");
+      
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+              scrollTopBtn.classList.add("show");
+            } else {
+              scrollTopBtn.classList.remove("show");
+            }
+          });
+      
+          function scrollToTop() {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+        </script>
+    </main>
+</body>
+
+<script>
+    let next = document.querySelector('.next');
+    let prev = document.querySelector('.prev');
+
+    next.addEventListener('click', function () {
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').appendChild(items[0]);
+    });
+
+    prev.addEventListener('click', function () {
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').prepend(items[items.length - 1]);
+    });
+  // This event triggers every time the page is shown, including when coming back from a submission.
+  window.addEventListener("pageshow", function(event) {
+    document.getElementById("bookingForm").reset();
+  });
+
+</script>
+
+</html>
