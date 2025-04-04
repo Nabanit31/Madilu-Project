@@ -1,0 +1,1007 @@
+/*--------------------------FONTS-------------------------------*/
+/* Kaisei Tokumin Fonts is a Serif font used for titles and certain
+accents*/
+@font-face{
+    font-family: KaiseiTokumin;
+    src: url(../fonts/KaiseiTokumin-Regular.ttf);
+}
+
+/* MontSerrat is a Sans Serif font used for bodies of text*/
+@font-face{
+    font-family: MontSerrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+/*--------------------------BODY-------------------------------*/
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+    scrollbar-width: none;
+}
+
+body, html {
+    /*Settings defaults values for the page*/
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: #EBE3D7;
+    color:  #706457;
+    font-family: MontSerrat, Arial, sans-serif;
+    -ms-overflow-style: none;
+    /*Smooth scroll allows using anchor links with
+    smooth scrolling down to required section*/
+    scroll-behavior: smooth; 
+    -webkit-scroll-behavior: smooth; /* Safari */
+    ::-webkit-scrollbar {
+    display: none;
+}
+/* Carousel  */
+
+/* =====================
+   Carousel CSS (Merged)
+   ===================== */
+
+/* Reset / Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Optional: Body background or global styles */
+body {
+    background: #eaeaea;
+    /* overflow: hidden; <-- If you want to allow scrolling on your entire site, remove this */
+}
+
+/* The main container for the carousel */
+.container {
+    position: relative; /* If you prefer absolute, adjust accordingly */
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto; /* center horizontally */
+    background: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+    overflow: hidden; /* hide any overflow if slides are outside container */
+}
+
+/* Slide wrapper */
+.container .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Each slide item (background image) */
+.container .slide .item {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -5%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+/* The first two slides fill the entire container as the background */
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Next slides appear to the right */
+.slide .item:nth-child(3) {
+    left: 50%;
+}
+.slide .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+.slide .item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+.slide .item:nth-child(n + 6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+/* Content inside each slide (text, etc.) */
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+.slide .item:nth-child(2) .content {
+    display: block; /* show content on second slide by default */
+}
+
+.content .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+.content .des {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.content button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+/* Keyframes for text fade-in */
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+/* Carousel arrows */
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    
+}
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+    border: none;
+}
+.button button:hover {
+    background: #ababab;
+    color: #fff;
+}
+
+/* =====================
+   Existing site styles
+   (Already in your style.css)
+   Keep your other styles for about, booking, contact, etc.
+   ...
+   ...
+*/
+
+
+/* end */
+/* Ensure scrolling still works */
+body {
+    overflow: auto;
+}
+}
+
+
+h1, h2, h3 {    
+    font-weight: normal; /*Removing the default bold weight on titles*/
+    padding: 0;
+    margin: 0;
+    font-family: KaiseiTokumin, Georgia, serif;
+    color:  #706457;
+}
+
+h2 {
+    padding: 1.7rem 2rem 0 2rem;
+    font-size: 2.5em;
+    color: #706457 !important;
+
+}
+
+/*Media query for adjusting the spacing around titles on small screens*/
+@media screen and (max-width: 900px){
+    h2{
+        padding-top:1em;
+        font-size: 2em;
+        padding-left: 1em;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.gallery, .amenities, .booking, .things-to-do {
+    min-height: 60vh;
+}
+
+/*Setting the max width of content to stop stretching effect on ultrawide screens*/
+.about, .amenities {
+    max-width: 1366px;
+    margin:auto;
+}
+
+.content-wrapper{
+    max-width: 1366px;
+    margin:auto;
+}
+
+.light-section {
+    background-color: #FFFAF6;
+    color: #C1AC96;
+}
+
+.dark-section {
+    background-color: #C1AC96;
+    color: #FFFAF6;
+}
+
+/* The above code is a CSS code snippet targeting the `h2` elements within a section with the class
+`dark-section`. It sets the text color of these `h2` elements to `#FFFAF6`, which is a light cream
+color. */
+/* .dark-section h2 {
+    color: #FFFAF6;
+
+} */
+
+.booking-btn {
+    background: linear-gradient(#F9C36D, #ffb237);
+    border: solid 2px #F9C36D;
+    padding: 0.5em 2em;
+    border-radius: 1em;
+    font-size: 1em;
+    color: #706457;
+}
+
+.booking-btn:hover {
+    background: transparent;
+}
+
+
+
+
+/*--------------------------HERO-------------------------------*/
+.hero{
+    /*2 heights are specified, the first height uses the SVH units for small viewport height
+    which is used for mobile devices that have address bars that hides on scroll*/
+    height: 100svh;
+    height: 100vh; 
+
+    /*Houzz. "Old Barns Become an Airy Modern Rustic Home." Accessed October 19, 2024.
+    https://www.houzz.com/magazine/houzz-tour-old-barns-become-an-airy-modern-rustic-homestsetivw-
+    vs~172078646. */
+    background: url("../images/property/GateEntry.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*A translucent overlay is used to reduce the overwhelming effect of the highly 
+saturated photography. This allows users to still see the elements in this section*/
+.overlay{
+    width: 100%;
+    height: 100%;
+
+
+
+    /*Centering elements using flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*Position relative to allow absolute position of children elements */
+    position: relative;
+}
+
+.hero-logo{
+    height: 50svh;
+    height: 50vh;
+    margin-bottom: 0;
+    visibility: hidden;
+}
+
+
+/*Bouncing effect to guide users to scroll further down the page*/
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.explore-button {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2em;
+    cursor: pointer;    
+    font-family: KaiseiTokumin, Georgia, serif;
+    color:  #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: bounce 2s infinite;
+
+}
+
+/*Text shadow to create a subtle micro interaction and user engagement*/
+.explore-button:hover {
+    text-shadow:0 0 10px white,
+                0 0 20px white;
+}
+
+.explore-icon {
+    filter: invert(100%) brightness(100%);
+    height: 3em;
+    padding: 0;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 1366px){
+    .explore-button {
+        font-size: 1.2em; 
+    }
+}
+
+
+/*--------------------------ABOUT-------------------------------*/
+.about{
+    min-height: 30vh;
+    padding: 4rem 0;
+}
+
+.about h2{
+    padding-top: 0em;
+}
+
+.about-grid{
+    margin: 1em 2em;
+    padding: 1em;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}
+
+.tile{
+    height:100%;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.middle-tile{   
+    display: flex;    
+
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap:2em;    
+}
+
+.tagline{
+    font-size: 2.3em;
+    font-family: KaiseiTokumin, serif;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px){
+    .about-grid{
+        grid-template-columns: 1fr;
+        gap:5em;
+    }
+}
+
+
+/*--------------------------GALLERY-------------------------------*/
+/*Horizontally gallery scroller adapted from Kevin Powell "Create
+a Horizontal Media Scroller with CSS", viewed 13 November 2024,
+https://youtu.be/3yfswsnD2sw?si=DHFHC4J6npC01QLC */
+
+/*The Gallery scroller uses overflow-x and scroll-snap to allow
+users to scroll horizontal through the images*/
+
+
+/* Container for the Gallery Section */
+.gallery .content-wrapper {
+  position: relative;
+  padding: 1rem;
+}
+
+/* Gallery container uses 100% width with a max-width for larger screens */
+.gallery .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slide wrapper set as a flex container */
+.gallery .slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Each gallery item */
+.gallery .item {
+  flex: 0 0 65%;  /* Each item occupies 65% of the container width */
+  height: 60vh;   /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-right: 1rem;
+}
+
+/* Content overlay within each item */
+.gallery .item .content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: #FFFAF6;
+  text-shadow: 0 0 10px rgba(121, 108, 95, 0.8);
+}
+
+/* Gallery heading styles */
+.gallery h2 {
+  color: #FFFAF6;
+  text-shadow: 0px 0px 10px rgb(121, 108, 95);
+  margin-bottom: 1rem;
+}
+
+/* Navigation arrows (you can adjust positions as needed) */
+.gallery .button {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .gallery .item {
+    flex: 0 0 90%;   /* Increase width of each item on small screens */
+    height: 40vh;    /* Reduce height on smaller devices */
+  }
+  
+  .gallery .item .content {
+    bottom: 5%;
+    left: 5%;
+    font-size: 0.9em;  /* Adjust font sizes if needed */
+  }
+}
+
+/* Image Caraoseul */
+
+/* End */
+
+/*--------------------------AMENITIES-------------------------------*/
+.amenities {
+    padding: 3rem 0;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2em;
+}
+
+.image-container {
+    height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.amenities-image {
+    height: 70%;
+    object-fit: cover;
+    box-shadow: -20px -20px #C1AC96;
+}
+
+
+.amenities-info{
+    padding: 2em;
+}
+
+.amenities-info h2{
+    padding: 0 0 3rem 0;
+}
+
+.description {
+    font-size: 1em;
+    margin: 1em;
+}
+
+.info-tiles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-tile {
+    text-align: center;
+    flex: 1;
+}
+
+.amenities-icons {
+    filter: invert(40%) sepia(7%) saturate(924%) hue-rotate(350deg) brightness(95%) contrast(88%); 
+    height: 3rem;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: #c1ac96;
+    margin: 1em;
+}
+
+.info-tile p {
+    font-size: 1em;
+    color: #706457;
+    margin: 0;
+}
+
+.amenities-list {
+    list-style: circle;
+    padding: 2em;
+    color: #706457;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.amenities-list li {
+    margin-bottom: 0.5rem;
+}
+
+
+.right-align{
+    display:inline-block;
+    margin-left: 66%;
+}
+
+
+@media screen and (max-width: 900px) {
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 0
+    }
+
+    .image-container {
+        height: 50vh; 
+    }
+
+    .info-tile p {
+        font-size: 0.9em;
+    }
+
+    .right-align{
+        margin-left: 40%;
+    }
+}
+
+
+/*--------------------------THINGS TO DO-------------------------------*/
+/* Things to do slider adapted from Skillthrive "HTML and CSS Project 
+Tutorial: Pure CSS Image Slider", viewed November 17 2024:
+https://youtu.be/McPdzhLRzCg?si=J9UiAn1DHpnMAEsm */
+
+.things-to-do{
+    position: relative; 
+}
+
+.things-title-wrapper{
+    position: absolute;
+    z-index: 1; /* Ensures the title appears above the images */
+}
+
+.things-to-do h2{
+    color: #FFFAF6;
+    text-shadow: 0px 0px 10px rgb(121, 108, 95);
+}
+
+.slider-nav{
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+
+    border: solid 3px #FFFAF6;
+    text-shadow: 0px 0px 10px rgb(121, 108, 95);
+
+    opacity: 0.75;
+    transition: opacity ease-in-out 250ms;
+}
+
+.slider-nav a:hover{
+    opacity: 1;
+    background-color: #FFFAF6;
+}
+
+.things-slider {
+    height: 60vh;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;  /* 100% for slides to display one at a time*/
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth; 
+}
+
+/*Scrollbars are hidden for a cleaner look as the slider has navigation dots*/
+.things-slider::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.things {
+    scrollbar-width: none;  /* Mozilla*/
+}
+
+.slide{
+    height: 60vh;
+    object-fit: cover;
+    position:relative;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    position: relative;
+    z-index: 0;
+}
+
+h3 {
+    color: #FFFAF6;
+
+}
+
+.slide-text{
+    position: absolute;
+    bottom: 5%; /* Reduce bottom space to prevent overlap */
+    left: 5%;
+    width: auto; /* Allow dynamic width */
+    max-width: 40%; /* Prevent too-wide text */
+    background: rgba(193, 172, 150, 0.8);
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.text-2{
+    bottom: 10%;
+    left: 60%;
+}
+
+@media screen and (max-width: 1024px) {
+    .things, .things-slider, .slide {
+        height: 80vh;
+
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .things, .things-slider, .slide {
+        height: 80vh;
+
+    }
+
+
+    .slide-text{
+        line-height: 1.5em;
+        font-size: 0.9em;
+        width: 80%;
+    }
+
+    .text
+
+    .text-2, .slide-text {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/*--------------------------BOOKING-------------------------------*/
+.booking {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.booking-grid {
+    gap: 1em;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding-left: 35%;
+    height: 100%;
+}
+
+/* Remove default focus outline */
+input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Override Chrome's autofill background/border */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    border: 1px solid #ccc !important;
+    -webkit-text-fill-color: #000 !important;
+  
+    /* Force override of the autofill background color */
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    box-shadow: 0 0 0 1000px #fff inset !important;
+    
+    /* Optional: slow transition to hide the yellow autofill color more gracefully */
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+@media screen and (max-width: 900px) {
+    .booking-grid {
+        grid-template-columns: 1fr;
+        padding: 2em;
+        gap: 0;
+    }
+    .date-row {
+        gap: 2em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.form-container {
+    display:flex;
+    flex-direction:column;
+    gap: 2em;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+#textplace{
+    color: #C1AC96; 
+}
+input::placeholder {
+    color: #C1AC96 !important;
+    padding-top: 100px !important; 
+  }
+  
+
+/* Apply transition to the placeholder pseudo-element */
+.input-group input::placeholder {
+    transition: opacity 0.3s ease-in-out;
+    color: #706457;
+  }
+  
+  /* On focus, fade out the placeholder */
+  .input-group input:focus::placeholder {
+    opacity: 0;
+  }
+  
+input[type=text], input[type=email], input[type=tel] {
+    width: 100%;
+}
+
+input[type=date] {
+    padding: 0 2em;
+    font-size: 1.2em;
+}
+
+input {
+    height: 2em;
+    border: none;
+    border-bottom: 1px solid #c1ac96;
+    background: transparent;
+    color: #706457; 
+}
+
+input:after{
+    background: #c1ac96;
+}
+
+input:focus{
+    background: #FFFAF6;
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 3em;
+}
+
+.booking-grid img{
+    box-shadow: 20px -20px #EBE3D7;
+}
+
+.booking-grid > .image-container {
+    width: 100%;
+}
+
+.form-container > .booking-btn {
+    width: 50%;
+    align-self: center;
+    font-size: 1.2em;
+}
+.booking-btn{
+    cursor: pointer;
+}
+/*--------------------------CONTACT-------------------------------*/
+.contact-flex{
+    padding: 5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.contact-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.contact-left img {
+    filter: brightness(0) saturate(100%) invert(96%) sepia(36%) saturate(680%) hue-rotate(292deg) brightness(111%) contrast(101%);
+}
+
+.contact-logo {
+    height: 10em;
+}
+
+.contact-icon {
+    height: 3em;
+    padding: 1em 1em;
+    transition: opacity ease-in-out 250ms;
+}
+
+.contact-right {
+    width: 100%;
+    height: 400px;
+}
+
+.map{
+    width:100%; 
+    height:100%;
+}
+
+@media screen and (max-width: 900px) {
+    .contact-flex{
+        flex-direction: column;
+    }
+}
+
+.contact-icon:hover {
+    filter: brightness(0) saturate(100%) invert(91%) sepia(7%) saturate(558%) hue-rotate(335deg) brightness(106%) contrast(84%);
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #a18b74;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .scroll-top:hover {
+    background: #c4a77d;
+  }
+  
+  .scroll-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsive Mobile Tweaks */
+  @media (max-width: 600px) {
+    .scroll-top {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+  
+    .card__title {
+      font-size: 1rem;
+    }
+  
+    .card__description {
+      font-size: 0.8rem;
+    }
+  
+    .card__button {
+      font-size: 0.8rem;
+    }
+  }
+/* end */
+/*--------------------------FOOTER-------------------------------*/
+footer {
+    width: 100%;
+    background-color: #FFFAF6;
+    color: #C1AC96;
+
+    margin: 0;
+    padding: 0;
+}
+
+footer p{
+    margin: 0 auto 0 auto;
+    padding: 1em;
+    max-width: 900px;
+    text-align: justify;
+    font-style: italic;
+}
+
