@@ -22,22 +22,39 @@
 
     <!-- Linking external stylesheet using relative path to it  -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
 
 
     <!-- Using a customer favicon to show on the browser title bar  -->
     <link rel="icon" href="images/logo/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- Body contains all the visible content of the webpage, subdivided in different sections -->
 
 <body>
     <main>
+        <!-- Navigation bar with logo and links to different pages -->
+        <header class="navbar">
+            <nav class="navbar__content">
+              <a href="#home" class="logo1">Madilu</a>
+              <input type="checkbox" id="nav-toggle">
+              <label for="nav-toggle" class="checkbtn">
+                <i class="fas fa-bars"></i>
+              </label>
+              <ul class="nav__links">
+                <li><a href="#home" onclick="document.getElementById('nav-toggle').checked = false;">Home</a></li>
+                <li><a href="#gallery" onclick="document.getElementById('nav-toggle').checked = false;">Destinations</a></li>
+                <li><a href="#things-to-do" onclick="document.getElementById('nav-toggle').checked = false;">Things to Do</a></li>
+                <li><a href="#booking" onclick="document.getElementById('nav-toggle').checked = false;">Bookings</a></li>
+                <li><a href="#Places" onclick="document.getElementById('nav-toggle').checked = false;">Places</a></li>
+                <li><a href="#contact" onclick="document.getElementById('nav-toggle').checked = false;">Contact</a></li>
+              </ul>
+            </nav>
+          </header>
         <!-- Hero section covering whole screen -->
         <!-- Hero section uses div instead section as doesnt contain a heading -->
-        <div class="hero">
+        <div class="hero"id="home">
             <!-- Overlay to apply filter to background and contain hero sections elements -->
             <div class="overlay">
                 <img class="hero-logo" src="images/logo/Madilu-logo-square.png" alt="Madilu Farm Stay logo">
@@ -216,30 +233,27 @@
                     </ul>
 
                     <!-- Link to booking section -->
-                    <a href="#booking" class="right-align booking-btn">Book Now</a>
+                    <div class="#"><a href="#booking" class="right-align booking-btn">Book Now</a></div>
+
                 </div>
             </div>
         </section>
 
         <!-- Things To Do section -->
-        <section class="things-to-do dark-section">
+        <section class="things-to-do"id="things-to-do">
             <div class="content-wrapper">
-                <div class="things-title-wrapper">
-                    <h2>Things to do</h2>
-                </div>
+                <!-- Title at the top -->
+                <h2 class="things-title">Things to do</h2>
 
                 <!-- Things to do Slider -->
-                <div class="things-slider snaps-inline">
+                <div class="things-slider snaps-inline" id="sliderContainer">
                     <!-- Slide 1 -->
                     <div class="slide" id="slide-1">
-                        <!-- Adobe Stock. "Portrait of Anglo-Nubian Goat with Herbs in the Mouth." Accessed October 20, 2024.
-                        https://stock.adobe.com/au/images/portrait-of-anglo-nubian-goat-with-herbs-in-themouth/
-                        199776985?prev_url=detail. -->
                         <img src="images/things-to-do/goat.jpeg" alt="Picture of Rosie The Goat">
-
                         <div class="slide-text text-1">
                             <h3>Meet Rosie The Goat</h3>
-                            <p>During your visit, don’t miss the chance to meet Rosie, our lovable and playful goat!
+                            <p>
+                                During your visit, don’t miss the chance to meet Rosie, our lovable and playful goat!
                                 She adores being fed and pampered with gentle pats, especially behind her ears.
                                 Rosie’s sweet personality and playful head nudges are sure to make your day
                                 unforgettable.
@@ -249,14 +263,13 @@
 
                     <!-- Slide 2 -->
                     <div class="slide" id="slide-2">
-                        <!-- Adobe Stock. "Female watching the sunset after a long day hiking in Blue Mountains" Accessed November 17, 2024.
-                        https://stock.adobe.com/au/images/female-watching-the-sunset-after-a-long-day-hiking-in-blue-mountains/265105167 -->
                         <img src="images/things-to-do/hiking.jpg" alt="Picture of a woman hiking in the Blue Mountains">
                         <div class="slide-text text-2">
                             <h3>Visit the Blue Mountains</h3>
-                            <p>Step into the heart of Australia’s natural beauty with the majestic Blue Mountains right
-                                at our doorstep.
-                                Whether you’re planning a day hike, exploring the vibrant visitor centers,
+                            <p>
+                                Step into the heart of Australia’s natural beauty with the majestic Blue Mountains right
+                                at our doorstep. Whether you’re planning a day hike or exploring the vibrant visitor
+                                centers,
                                 this remarkable landscape offers unforgettable experiences for every adventurer.
                             </p>
                         </div>
@@ -264,17 +277,16 @@
 
                     <!-- Slide 3 -->
                     <div class="slide" id="slide-3">
-                        <!-- Pools and Spa Life. "Types of Plunge Pools." Accessed October 18, 2024.
-                        https://www.poolspalife.com.au/buying/types-of-pools/plunge-pools. -->
                         <img src="images/things-to-do/pool.webp" alt="Picture of the plunge pool">
                         <div class="slide-text text-3">
                             <h3>Take a Dip in the Plunge Pool</h3>
-                            <p>After a long day of exploring, hiking, or traveling, unwind in our beatiful heater plunge
-                                pool. Allow
-                                the soothing warmth melt away your fatigue as you sink into this peaceful oasis. A
-                                complimentary bottle
-                                of wine is offered to help you enjoy the tranquil evening sky in the perfect spot to
-                                relax and recharge.
+                            <p>
+                                After a long day of exploring, hiking, or traveling, unwind in our beautiful heated
+                                plunge pool.
+                                Allow the soothing warmth to melt away your fatigue as you sink into this peaceful
+                                oasis.
+                                A complimentary bottle of wine is offered to help you enjoy the tranquil evening sky in
+                                the perfect spot to relax and recharge.
                             </p>
                         </div>
                     </div>
@@ -282,13 +294,15 @@
 
                 <!-- Slider navigation (3 dots) -->
                 <div class="slider-nav">
-                    <a href="#slide-1"></a>
-                    <a href="#slide-2"></a>
-                    <a href="#slide-3"></a>
+                    <a data-slide="0"></a>
+                    <a data-slide="1"></a>
+                    <a data-slide="2"></a>
                 </div>
-
             </div>
         </section>
+
+
+
 
         <!-- Booking section -->
         <section class="booking light-section" id="booking">
@@ -309,14 +323,14 @@
 
                         <div class="input-group">
                             <label>Phone</label>
-                            <input type="tel" placeholder="Enter your Mobile Number" name="Phone" id="phone" required
-                                onfocus="this.placeholder=''" onblur="this.placeholder='Type your Number Here.'">
+                            <input type="tel" placeholder="Enter your Contact / WhatsApp Number" name="Phone" id="phone" required
+                                onfocus="this.placeholder='Contact / WhatsApp Number'" onblur="this.placeholder='Type your Contact Number Here.'">
                         </div>
                         <div class="input-group">
                             <label>Message</label>
-                            <input type="text" placeholder="Got something to say?" name="Message" id="textplace"
-                                required onfocus="this.placeholder=''"
-                                onblur="this.placeholder='Type your message here.'">
+                            <input type="text" placeholder="Type Your Message Here." name="Message" id="textplace"
+                                required onfocus="this.placeholder='Message Here.'"
+                                onblur="this.placeholder='Get to know about the avaiable dates.'">
                         </div>
 
                         <div class="date-row">
@@ -333,15 +347,15 @@
                         <button class="booking-btn" type="submit">Submit</button>
                     </form>
 
-                    <!-- Notification -->
+                    <!-- Notification
                     <div id="notification" class="hidden">
                         Thank you for submitting! A confirmation email has been sent.
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
 
-        <style>
+        <!-- <style>
             #notification {
                 display: none;
                 margin-top: 10px;
@@ -355,24 +369,51 @@
             .hidden {
                 display: none;
             }
-        </style>
+        </style> -->
 
-        
-        
 
-        <div class="image-container">
-            <!-- Houzz. "Old Barns Become an Airy Modern Rustic Home." Accessed October 19, 2024.
-                        https://www.houzz.com/magazine/houzz-tour-old-barns-become-an-airy-modern-rustic-homestsetivw-
-                        vs~172078646. -->
-            <img class="amenities-image" src="images/property/home-9.jpg"
-                alt="Picture of house interior, living room with fireplace">
-        </div>
-        </div>
+        <!-- Card Section -->
+        <div class="cards-wrapper"id="Places">
+            <!-- Move the title outside of the card__container -->
+            <h2 class="things-title">Places Nearby</h2>
+
+            <div class="card__container">
+                <article class="card__article">
+                    <img src="./images/property/10-5.png" alt="image" class="card__img">
+
+                    <div class="card__data">
+                        <span class="card__description">Vancouver Mountains, Canada</span>
+                        <h2 class="card__title">The Great Path</h2>
+                        <a href="#" class="card__button">Read More</a>
+                    </div>
+                </article>
+
+                <article class="card__article">
+                    <img src="./images/property/360_F_247833152_El8gFAYYFoVcwEZX9hvut3G3CBx3Wgbb.jpg" alt="image"
+                        class="card__img">
+
+                    <div class="card__data">
+                        <span class="card__description">Poon Hill, Nepal</span>
+                        <h2 class="card__title">Starry Night</h2>
+                        <a href="#" class="card__button">Read More</a>
+                    </div>
+                </article>
+
+                <article class="card__article">
+                    <img src="./images/property/What-Is-the-Difference-Between-a-Resort-and-a-Hotel-2.png" alt="image"
+                        class="card__img">
+
+                    <div class="card__data">
+                        <span class="card__description">Bojcin Forest, Serbia</span>
+                        <h2 class="card__title">Path Of Peace</h2>
+                        <a href="#" class="card__button">Read More</a>
+                    </div>
+                </article>
+            </div>
         </div>
         </section>
-
         <!-- Contact section -->
-        <section class="contact dark-section">
+        <section class="contact dark-section"id="contact">
             <div class="content-wrapper">
                 <h2>Contact Us</h2>
                 <div class="contact-flex">
@@ -417,28 +458,28 @@
             </div>
         </section>
         <button id="scrollTopBtn" class="scroll-top" onclick="scrollToTop()">↑</button>
-
+        <!-- scrollTopBtn -->
         <script>
-          const scrollTopBtn = document.getElementById("scrollTopBtn");
-      
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-              scrollTopBtn.classList.add("show");
-            } else {
-              scrollTopBtn.classList.remove("show");
-            }
-          });
-      
-          function scrollToTop() {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth"
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add("show");
+                } else {
+                    scrollTopBtn.classList.remove("show");
+                }
             });
-          }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
         </script>
     </main>
 </body>
-
+<!-- Gallery Section JS -->
 <script>
     let next = document.querySelector('.next');
     let prev = document.querySelector('.prev');
@@ -452,11 +493,43 @@
         let items = document.querySelectorAll('.item');
         document.querySelector('.slide').prepend(items[items.length - 1]);
     });
-  // This event triggers every time the page is shown, including when coming back from a submission.
-  window.addEventListener("pageshow", function(event) {
-    document.getElementById("bookingForm").reset();
-  });
+    // This event triggers every time the page is shown, including when coming back from a submission.
+    window.addEventListener("pageshow", function (event) {
+        document.getElementById("bookingForm").reset();
+    });
 
 </script>
+<!-- JavaScript to handle manual and automatic horizontal scrolling for Things To Do -->
+<script>
+    const sliderContainer = document.getElementById('sliderContainer');
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5 seconds
+
+    // Function to scroll to a given slide index
+    function goToSlide(index) {
+        sliderContainer.scrollTo({
+            left: sliderContainer.clientWidth * index,
+            behavior: 'smooth'
+        });
+        currentSlide = index;
+    }
+
+    // Manual navigation
+    document.querySelectorAll('.slider-nav a').forEach((dot, index) => {
+        dot.addEventListener('click', e => {
+            e.preventDefault();
+            goToSlide(index);
+        });
+    });
+
+    // Automatic slider with infinite loop
+    setInterval(() => {
+        let nextSlide = (currentSlide + 1) % slides.length;
+        goToSlide(nextSlide);
+    }, slideInterval);
+</script>
+
+<script src="script.js"></script>
 
 </html>

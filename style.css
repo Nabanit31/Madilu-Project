@@ -34,9 +34,9 @@ body, html {
     /*Smooth scroll allows using anchor links with
     smooth scrolling down to required section*/
     scroll-behavior: smooth; 
-    -webkit-scroll-behavior: smooth; /* Safari */
-    ::-webkit-scrollbar {
-    display: none;
+    /* -webkit-scroll-behavior: smooth; /* Safari */
+    /* ::-webkit-scrollbar {
+    display: none; */ 
 }
 /* Carousel  */
 
@@ -56,6 +56,137 @@ body {
     background: #eaeaea;
     /* overflow: hidden; <-- If you want to allow scrolling on your entire site, remove this */
 }
+
+/* Navbar */
+
+/* Sticky Navbar */
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.navbar__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.logo1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #5a4d42;
+  text-decoration: none;
+}
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav__links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav__links a:hover {
+  background: #88705c;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.5s;
+}
+.checkbtn {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+#nav-toggle {
+  display: none;
+}
+@media (max-width: 750px) {
+  .checkbtn {
+    display: block;
+  }
+  .nav__links {
+    position: fixed;
+    top: 68px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 68px);
+    background: #333;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: left 0.5s ease;
+  }
+  .nav__links li {
+    margin: 0;
+  }
+  .nav__links a {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  #nav-toggle:checked ~ .nav__links {
+    left: 0;
+  }
+  .nav__links a:hover {
+    background: #88705c;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background 0.5s;
+  }
+}
+
+/* End */
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel__slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* End */
+
+/* Side Scroller */
+
+::-webkit-scrollbar{
+  width: 15px;
+}
+::-webkit-scrollbar-track{
+  background: #d2bea7;
+}
+::-webkit-scrollbar-thumb{
+  background: #d1a680;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #88705c;
+}
+
+/* End */
+/* ENd */
+
+
 
 /* The main container for the carousel */
 .container {
@@ -205,7 +336,7 @@ body {
 body {
     overflow: auto;
 }
-}
+
 
 
 h1, h2, h3 {    
@@ -277,7 +408,30 @@ color. */
     font-size: 1em;
     color: #706457;
 }
-
+.right-align {
+    position: relative;
+    left: -500px; /* Original position for wider screens */
+    top: 25px;
+    background-color: lightblue;
+    width: 117px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  @media (max-width: 900px) {
+    .right-align {
+      left: 0;         /* Reset left positioning */
+      margin: 0 auto;  /* Center the button horizontally */
+    }
+    #myBoxMarginAuto {
+      max-width: 180px; 
+      padding: 10px;
+      font-size: 0.9em;
+      margin-top: 15px;
+      margin: 0 auto;  /* Center the container */
+    }
+  }
+  
 .booking-btn:hover {
     background: transparent;
 }
@@ -884,6 +1038,243 @@ input:focus{
 .booking-btn{
     cursor: pointer;
 }
+
+/* Card Section  */
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+    :root {
+      --h2-font-size: 1.5rem;
+      --small-font-size: .875rem;
+    }
+  }
+  
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /*=============== CARD ===============*/
+
+  .card__container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    padding: 4rem;
+    cursor: pointer;
+  }
+  
+  .card__img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+  
+  .card__data {
+    width: 90%;
+    max-width: 320px;
+    background-color: var(--container-color);
+    padding: 1.5rem 2rem;
+    position: absolute;
+  z-index: 2;    /* above the image */
+  background: white !important;
+  border-radius: 20px;
+    /* …other styles… */
+  }
+  .card__article {
+    position: relative;
+    overflow: hidden;      /* hide overlay by default */
+  }
+  
+  .card__article:hover,
+  .card__article:focus-within,
+  .card__article:active {
+    overflow: visible;     /* allow overlay to show */
+  }
+  
+  .card__data {
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+    max-width: 328px;
+    border-radius: 1.5rem;
+    background-color: var(--container-color);
+    padding: 1.5rem 2rem;
+    opacity: 0;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+  
+  .card__article:hover .card__data,
+  .card__article:focus-within .card__data,
+  .card__article:active .card__data {
+    transform: translateY(-8rem);
+    opacity: 1;
+  }
+  
+  .card__description {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: .25rem;
+  }
+  
+  .card__title {
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+    color: var(--title-color);
+    margin-bottom: .75rem;
+  }
+  
+  .card__button {
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    color: var(--first-color);
+  }
+  
+  .card__button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Naming animations in hover */
+  .card__article:hover .card__data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  
+  .card__article:hover {
+    animation: remove-overflow 2s forwards;
+  }
+  
+  .card__article:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+  
+  .card__article:not(:hover) .card__data {
+    animation: remove-data 1s forwards;
+  }
+  
+  /* Card animation */
+  @keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+  
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(.5rem);
+    }
+  }
+  
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
+  
+ /*=============== BREAKPOINTS ===============*/
+
+/* For small devices */
+
+  
+  /* For medium devices (tablets) */
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .card__container {
+      /* two columns on mid-size screens */
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+    }
+  }
+  
+  /* For screens below 992px: force single column */
+  @media screen and (max-width: 991px) {
+    .container {
+      padding-top: 3rem;    /* adds breathing room above the first card */
+      padding-inline: 1rem; /* small side padding */
+    }
+    @media screen and (max-width: 375px) {
+      .container {
+        padding-top: 2rem;    /* adds breathing room above the first card */
+        padding-inline: 1rem; /* small side padding */
+      }
+      
+  /* right after your Submit button wrapper */
+.cards-wrapper {
+    padding: 4rem;  /* creates a gap between the form and the cards */
+  }
+  
+    .card__container {
+      grid-template-columns: 1fr;
+      place-items: center;
+      row-gap: 5rem;        /* more space between stacked cards */
+    }
+  
+    .card__article {
+      width: 100%;          /* let it fill available width */
+      max-width: 350px;     /* cap how wide it can grow */
+    }
+  }
+  } 
+
+  /* Existing hover rule */
+.card__article:hover .card__data,
+.card__article:focus-within .card__data,  /* new: when focused (after tap) */
+.card__article:active .card__data {        /* new: when tapping */
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+/* And ensure the card itself can receive focus: */
+.card__article {
+  outline: none;          /* remove default outline if desired */
+}
+.card__article:focus-within {
+  /* optional: add a subtle outline so keyboard/tap users know it’s focused */
+  outline: 2px solid var(--first-color);
+}
+
+  
+
+/* End */
+
 /*--------------------------CONTACT-------------------------------*/
 .contact-flex{
     padding: 5em 1em;

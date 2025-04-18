@@ -17,28 +17,32 @@
 //     });
 // });
 
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+// document.getElementById("bookingForm").addEventListener("submit", function(event) {
+//     event.preventDefault(); // Prevent default form submission
 
-    const formData = {
-        name: document.querySelector("input[name='name']").value,
-        email: document.querySelector("input[name='email']").value,
-        phone: document.querySelector("input[name='phone']").value,
-        fromDate: document.querySelector("input[name='fromDate']").value,
-        toDate: document.querySelector("input[name='toDate']").value
-    };
+//     const formData = {
+//         name: document.querySelector("input[name='name']").value,
+//         email: document.querySelector("input[name='email']").value,
+//         phone: document.querySelector("input[name='phone']").value,
+//         fromDate: document.querySelector("input[name='fromDate']").value,
+//         toDate: document.querySelector("input[name='toDate']").value
+//     };
 
-    fetch("http://127.0.0.1:5500/submit-form", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message);
-        document.getElementById("bookingForm").reset();
-    })
-    .catch(error => console.error("Error:", error));
-});
+//     fetch("http://127.0.0.1:5500/submit-form", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(formData)
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         alert(data.message);
+//         document.getElementById("bookingForm").reset();
+//     })
+//     .catch(error => console.error("Error:", error));
+// });
+ // JavaScript for custom scrollbar functionality
+// Fixed and improved version
+
+
