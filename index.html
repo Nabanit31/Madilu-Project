@@ -44,7 +44,7 @@
               </label>
               <ul class="nav__links">
                 <li><a href="#home" onclick="document.getElementById('nav-toggle').checked = false;">Home</a></li>
-                <li><a href="#gallery" onclick="document.getElementById('nav-toggle').checked = false;">Destinations</a></li>
+                <li><a href="#gallery" onclick="document.getElementById('nav-toggle').checked = false;">Gallery</a></li>
                 <li><a href="#things-to-do" onclick="document.getElementById('nav-toggle').checked = false;">Things to Do</a></li>
                 <li><a href="#booking" onclick="document.getElementById('nav-toggle').checked = false;">Bookings</a></li>
                 <li><a href="#Places" onclick="document.getElementById('nav-toggle').checked = false;">Places</a></li>
@@ -54,20 +54,16 @@
           </header>
         <!-- Hero section covering whole screen -->
         <!-- Hero section uses div instead section as doesnt contain a heading -->
-        <div class="hero"id="home">
-            <!-- Overlay to apply filter to background and contain hero sections elements -->
-            <div class="overlay">
-                <img class="hero-logo" src="images/logo/Madilu-logo-square.png" alt="Madilu Farm Stay logo">
-                <!-- Button linking to About section -->
-                <a href="#about" class="explore-button">
-                    Explore
-                    <!-- Arrow pointing down to indicate further content -->
-                    <!-- SVGRepo. "Chevron Compact Down SVG" Accessed November 11, 2024.
-                    https://www.svgrepo.com/svg/344635/chevron-compact-down  -->
-                    <img class="explore-icon" src="images/icons/chevron-down.svg" alt="Chevron pointing down">
-                </a>
-            </div>
-        </div>
+       <!-- index.html -->
+<div class="hero" id="home">
+  <div class="overlay">
+    <a href="#about" class="explore-button">
+      Explore
+      <img class="explore-icon" src="images/icons/chevron-down.svg" alt="Chevron pointing down">
+    </a>
+  </div>
+</div>
+
 
         <!-- About section -->
         <section class="about" id="about">
@@ -197,19 +193,19 @@
                             <!-- SVGRepo. "Users SVG Vector" Accessed November 14, 2024.
                             https://www.svgrepo.com/svg/473461/users -->
                             <img src="images/icons/guests.svg" class="amenities-icons" alt="Icon for number of guests">
-                            <p>Up to 15 guests</p>
+                            <p class="amenities-text">Up to 15 guests</p>
                         </div>
                         <div class="info-tile">
                             <!-- SVGRepo. "Bed Double SVG Vector" Accessed November 14, 2024.
                             https://www.svgrepo.com/svg/490555/bed-double  -->
                             <img src="images/icons/bed.svg" class="amenities-icons" alt="Icon for number of bedrooms">
-                            <p>4 bedrooms</p>
+                            <p class="amenities-text">4 Bedrooms</p>
                         </div>
                         <div class="info-tile">
                             <!-- SVGRepo. "Bathtub Mirror SVG Vector" Accessed November 14, 2024.
                             https://www.svgrepo.com/svg/490549/bathtub-mirror  -->
                             <img src="images/icons/bath.svg" class="amenities-icons" alt="Icon for number of bathrooms">
-                            <p>4 bathrooms</p>
+                            <p class="amenities-text">4 bathrooms</p>
                         </div>
                     </div>
 
@@ -221,10 +217,6 @@
                         <li>King size master bedroom with ensuite</li>
                         <li>Four charming bedrooms with king-sized beds</li>
                         <li>Modern kitchen with appliances</li>
-                    </ul>
-
-                    <!-- Features -->
-                    <ul class="amenities-list">
                         <li>Four acres of peaceful private land</li>
                         <li>Hand feed friendly farm animals</li>
                         <li>Private swimming pool</li>
@@ -267,10 +259,8 @@
                         <div class="slide-text text-2">
                             <h3>Visit the Blue Mountains</h3>
                             <p>
-                                Step into the heart of Australia’s natural beauty with the majestic Blue Mountains right
-                                at our doorstep. Whether you’re planning a day hike or exploring the vibrant visitor
-                                centers,
-                                this remarkable landscape offers unforgettable experiences for every adventurer.
+                                Explore the majestic Blue Mountains, right at our doorstep. 
+                                This remarkable landscape offers unforgettable adventures, whether you hike or visit the vibrant centers.
                             </p>
                         </div>
                     </div>
@@ -281,12 +271,9 @@
                         <div class="slide-text text-3">
                             <h3>Take a Dip in the Plunge Pool</h3>
                             <p>
-                                After a long day of exploring, hiking, or traveling, unwind in our beautiful heated
-                                plunge pool.
-                                Allow the soothing warmth to melt away your fatigue as you sink into this peaceful
-                                oasis.
-                                A complimentary bottle of wine is offered to help you enjoy the tranquil evening sky in
-                                the perfect spot to relax and recharge.
+                                Unwind in our beautiful heated plunge pool after a long day. 
+                                Relax and rejuvenate as you soak in the soothing waters, surrounded by nature's beauty.
+                                Let the warm, peaceful oasis melt away your fatigue, enjoying a complimentary wine under the tranquil evening sky.
                             </p>
                         </div>
                     </div>
@@ -424,24 +411,18 @@
                             <img class="contact-logo" src="images/logo/Madilu-logo-square.png"
                                 alt="Lilac Valley Farm Stay logo">
                         </a>
-                        <p>Madilu Farmstay
+                        <p class="contact-p">Madilu Farmstay
                             <br>Kolar - Chintamani Rd, Kithandur, Karnataka 563126
-                        </p>
-                        <p>+91 9591846471</p>
-                        <p>madilufarmstay@gmail.com</p>
+                        
+                        <br>+91 9591846471
+                        <br>madilufarmstay@gmail.com</p>
 
                         <!-- Social Media links-->
-                        <div>
-                            <!-- Facebook -->
-                            <!-- SVGRepo. "Facebook SVG Vector" Accessed November 18, 2024.
-                            https://www.svgrepo.com/svg/521654/facebook  -->
-                            <a class="contact-link" href="https://www.facebook.com/"><img class="contact-icon"
-                                    src="images/icons/facebook.svg" alt="DESCRIPTION"></a>
-                            <!-- Instagram -->
-                            <!-- SVGRepo. "Instagram SVG Vector " Accessed November 18, 2024.
-                            https://www.svgrepo.com/svg/521711/instagram  -->
-                            <a class="contact-link" href="https://www.instagram.com/"><img class="contact-icon"
-                                    src="images/icons/insta.svg" alt="DESCRIPTION"></a>
+                        <div class="icon-container">
+                            <a class="contact-link contact-icon" href="https://www.facebook.com/"><img class="contact-icon"
+                                    src="images/icons/facebook.svg" alt="Facebook Icon"></a>
+                            <a class="contact-link contact-icon" href="https://www.instagram.com/madilufarmstay?igsh=NWI2eDF2NGg0bDY1&utm_source=qr"><img class="contact-icon"
+                                    src="images/icons/insta.svg" alt="Instagram Icon"></a>
                         </div>
                     </div>
                     <!-- Right section: Map -->

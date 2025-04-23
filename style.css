@@ -67,7 +67,7 @@ html {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: #d1c9b4;
   z-index: 999;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -92,16 +92,51 @@ html {
 }
 .nav__links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: #5a4d42;
+  font-weight: 600;
+  transition: color 1s;
 }
 .nav__links a:hover {
   background: #88705c;
-  color: #fff;
+  color: #ffffff60;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  transition: background 2s;
+}
+/* Keep the base .nav__links a style from above */
+
+/* Style for the pseudo-elements */
+.nav__links a::before,
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  height: 2px; /* Border thickness */
+  width: 0; /* Start with zero width */
+  background: #88705c; /* Border color */
+  transition: width 0.3s ease-out;
+}
+
+.nav__links a::before {
+  top: 0;
+  left: 0; /* Starts top-left */
+}
+
+.nav__links a::after {
+  bottom: 0;
+  right: 0; /* Starts bottom-right */
+}
+
+/* Hover state for the link */
+.nav__links a:hover {
+  color: #fff;
+  border-radius: 0.5rem;
   transition: background 0.5s;
+}
+
+/* Hover state triggers the pseudo-element's animation */
+.nav__links a:hover::before,
+.nav__links a:hover::after {
+  width: 100%; /* Animate to full width */
 }
 .checkbtn {
   font-size: 1.8rem;
@@ -409,14 +444,12 @@ color. */
     color: #706457;
 }
 .right-align {
-    position: relative;
-    left: -500px; /* Original position for wider screens */
-    top: 25px;
-    background-color: lightblue;
-    width: 117px;
-    padding: 10px;
-    text-align: center;
-  }
+  left: 0;
+  transform: translateX(0);
+  margin: 25px auto;
+  position: relative;
+  top: 0;
+}
   
   @media (max-width: 900px) {
     .right-align {
@@ -440,19 +473,27 @@ color. */
 
 
 /*--------------------------HERO-------------------------------*/
-.hero{
-    /*2 heights are specified, the first height uses the SVH units for small viewport height
-    which is used for mobile devices that have address bars that hides on scroll*/
-    height: 100svh;
-    height: 100vh; 
-
-    /*Houzz. "Old Barns Become an Airy Modern Rustic Home." Accessed October 19, 2024.
-    https://www.houzz.com/magazine/houzz-tour-old-barns-become-an-airy-modern-rustic-homestsetivw-
-    vs~172078646. */
-    background: url("../images/property/GateEntry.jpg");
-    background-size: cover;
-    background-position: center;
+.hero {
+  position: relative;
+  width: 100%;
+  /* instead of padding-top, use full viewport height */
+  height: 100vh;
+  background: url("../images/property/GateEntry.jpg")
+              center center / cover
+              no-repeat;
+  overflow: hidden; /* ensure no accidental overflow */
 }
+
+/* if you still want the 4:3 aspect-ratio trick on small (mobile) screens: */
+@media screen and (max-width: 767px) {
+  .hero {
+    height: auto;
+    padding-top: 75%;  /* keeps the 4:3 ratio on narrow viewports */
+  }
+}
+
+
+/* Add your media query here */
 
 /*A translucent overlay is used to reduce the overwhelming effect of the highly 
 saturated photography. This allows users to still see the elements in this section*/
@@ -671,7 +712,7 @@ users to scroll horizontal through the images*/
 /* End */
 
 /*--------------------------AMENITIES-------------------------------*/
-.amenities {
+/* .amenities {
     padding: 3rem 0;
 }
 
@@ -681,11 +722,10 @@ users to scroll horizontal through the images*/
     align-items: center;
     gap: 2rem;
     padding: 0 2em;
-}
+} */
 
 .image-container {
     height: 70vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -699,88 +739,137 @@ users to scroll horizontal through the images*/
 }
 
 
-.amenities-info{
-    padding: 2em;
+.amenities {
+  padding: 3rem 0;
+  text-align: center; /* Added for overall centering */
 }
 
-.amenities-info h2{
-    padding: 0 0 3rem 0;
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2em;
+  max-width: 1200px; /* Added for better content containment */
+  margin: 0 auto; /* Center the grid */
 }
 
-.description {
-    font-size: 1em;
-    margin: 1em;
+/* .image-container {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amenities-image {
+  width: 100%; /* Changed from height to width */
+  /* max-height: 70vh;
+  object-fit: cover;
+  box-shadow: -20px -20px #C1AC96;
+} */
+
+.amenities-info {
+  padding: 2em;
+  text-align: center; /* Center all info content */
 }
 
 .info-tiles {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: center; /* Changed from space-between */
+  gap: 2rem; /* Added spacing between tiles */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .info-tile {
-    text-align: center;
-    flex: 1;
+  text-align: center;
+  flex: 0 1 150px; /* Prevent stretching */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .amenities-icons {
-    filter: invert(40%) sepia(7%) saturate(924%) hue-rotate(350deg) brightness(95%) contrast(88%); 
-    height: 3rem;
+  filter: invert(40%) sepia(7%) saturate(924%) hue-rotate(350deg) brightness(95%) contrast(88%); 
+  height: 3rem;
+  margin: 0 auto; /* Center icons */
+  padding-left: 0 !important; /* Remove all left padding */
+}
+
+.amenities-text {
+  text-align: center; /* Changed from left */
+  margin-top: 0.5rem;
 }
 
 .separator {
-    border: 0;
-    height: 1px;
-    background: #c1ac96;
-    margin: 1em;
-}
-
-.info-tile p {
-    font-size: 1em;
-    color: #706457;
-    margin: 0;
+  border: 0;
+  height: 1px;
+  background: #c1ac96;
+  margin: 2rem auto; /* Center separators */
+  width: 80%;
 }
 
 .amenities-list {
-    list-style: circle;
-    padding: 2em;
-    color: #706457;
-    font-size: 0.9em;
-    line-height: 1.6;
+  list-style: circle;
+  padding: 2em;
+  color: #706457;
+  font-size: 0.9em;
+  line-height: 1.6;
+  text-align: left; /* Keep list text left-aligned */
+  max-width: 600px;
+  margin: 0 auto; /* Center the list */
 }
 
-.amenities-list li {
-    margin-bottom: 0.5rem;
+.right-align {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (if needed) */
+  margin: 2rem auto 0 !important; /* Top margin + horizontal auto-centering */
+  width: 50%; /* Full width for proper centering */
+  align-self: center;
 }
 
-
-.right-align{
-    display:inline-block;
-    margin-left: 66%;
-}
-
-
+/* Responsive adjustments */
 @media screen and (max-width: 900px) {
-    .amenities-grid {
-        grid-template-columns: 1fr;
-        padding: 0;
-        gap: 0
-    }
+  .amenities-grid {
+      grid-template-columns: 1fr;
+      padding: 0;
+      gap: 2rem;
+  }
 
-    .image-container {
-        height: 50vh; 
-    }
+  /* .image-container {
+      height: auto;
+      padding: 1rem;
+  } */
 
-    .info-tile p {
-        font-size: 0.9em;
-    }
+  /* .amenities-image {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+  } */
 
-    .right-align{
-        margin-left: 40%;
-    }
+  .info-tiles {
+      gap: 1.5rem;
+  }
+
+  .info-tile {
+      flex: 0 1 120px;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  .amenities-info {
+      padding: 1em;
+  }
 
+  .amenities-list {
+      padding: 1em;
+      font-size: 0.85em;
+  }
+
+  .info-tile {
+      flex: 0 1 100px;
+  }
+}
 /*--------------------------THINGS TO DO-------------------------------*/
 /* Things to do slider adapted from Skillthrive "HTML and CSS Project 
 Tutorial: Pure CSS Image Slider", viewed November 17 2024:
@@ -1270,8 +1359,135 @@ input:focus{
   /* optional: add a subtle outline so keyboard/tap users know it’s focused */
   outline: 2px solid var(--first-color);
 }
+@media screen and (min-width: 360px) and (max-width: 740px) and (orientation: portrait) {
+    .card__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
 
-  
+    .card__article {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card__img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .card__data {
+        padding: 1.2rem;
+    }
+
+    .card__description {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card__title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .card__button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 344px) and (max-width: 882px) and (orientation: portrait) {
+  .card__container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0 1rem;
+  }
+
+  .card__article {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card__img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+  }
+
+  .card__data {
+      padding: 1.2rem;
+  }
+
+  .card__description {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+  }
+
+  .card__title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+  }
+
+  .card__button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+  }
+}  
+@media screen and (min-width: 375px) and (max-width: px) and (orientation: portrait) {
+  .card__container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0 1rem;
+  }
+
+  .card__article {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card__img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+  }
+
+  .card__data {
+      padding: 1.2rem;
+  }
+
+  .card__description {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+  }
+
+  .card__title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+  }
+
+  .card__button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+  }
+}  
 
 /* End */
 
@@ -1302,9 +1518,16 @@ input:focus{
 }
 
 .contact-icon {
-    height: 3em;
-    padding: 1em 1em;
-    transition: opacity ease-in-out 250ms;
+  height: 3.5em; /* Increase this value to make the icons larger */
+  padding: 1em 0.5em;
+  transition: opacity ease-in-out 250ms;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .contact-right {
@@ -1326,7 +1549,31 @@ input:focus{
 .contact-icon:hover {
     filter: brightness(0) saturate(100%) invert(91%) sepia(7%) saturate(558%) hue-rotate(335deg) brightness(106%) contrast(84%);
 }
+.contact-p{
+  text-align: center;
+ font-weight: 500;
+ font-size: 20px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.contact-link{
 
+}
+/*--------------------------FOOTER-------------------------------*/
+.footer{
+    background-color: #a18b74;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+/*--------------------------SCROLL TO TOP-------------------------*/
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+}
 /* Scroll to Top Button */
 .scroll-top {
     position: fixed;
@@ -1396,3 +1643,57 @@ footer p{
     font-style: italic;
 }
 
+/* Scroll progress container */
+.scroll-progress-bar {
+  position: fixed;
+  top: 60px; /* Adjust based on your navbar height */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(136, 112, 92, 0.2);
+  z-index: 9999;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  height: 100%;
+  width: 0;
+  background: #88705c;
+  transition: width 0.3s ease-out;
+}
+/* 
+/* Scroll progress container */
+/* .scroll-progress-bar {
+  position: fixed;
+  top: 60px; /* Adjust based on your navbar height */
+  /* left: 0;
+  width: 100%;
+  height: 4px; /* Slightly thicker for better visibility */
+  /* background: rgba(200, 200, 200, 0.2);
+  z-index: 9999;
+} */
+
+/* Scroll progress indicator with RGB effect */
+/* .scroll-progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.8) 0%,
+      rgba(0, 255, 0, 0.8) 33%,
+      rgba(0, 0, 255, 0.8) 66%,
+      rgba(255, 0, 0, 0.8) 100%
+  );
+  transition: width 0.3s ease-out;
+  animation: rgb-flow 2s linear infinite;
+  background-size: 300% 100%;
+}
+
+@keyframes rgb-flow {
+  0% {
+      background-position: 100% 0;
+  }
+  100% {
+      background-position: 0% 0;
+  }
+}  */
